@@ -20,7 +20,10 @@ jobs:
           
       - name: Create docker image of the app
         run: docker load --input src/test/resources/todo-app.tar
-        
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Build with Gradle
         run: ./gradlew test
         
